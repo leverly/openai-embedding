@@ -31,7 +31,7 @@ func (c *OpenaiClient) Embedding(blocks []string) (error, []openai.Embedding) {
 			Model: openai.AdaEmbeddingV2,
 		})
 	if err != nil {
-		fmt.Printf("Create Embeddings error: %v\n", err)
+		fmt.Println("Create Embeddings error: %v", err)
 		return err, nil
 	}
 	return nil, resp.Data
