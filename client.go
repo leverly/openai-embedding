@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-var apiList = [3]string{
+var apikeyList = [3]string{
 	"sk-ziIjWUX7ZmfiVA86pSPH",
 	"sk-Fsf8MmcrssrKy5B7Pqvx",
 	"sk-t3wJTgGCLSv6nwNrAmBL",
@@ -20,7 +20,7 @@ type OpenaiClient struct {
 
 func newClient() *OpenaiClient {
 	rand.Seed(time.Now().Unix())
-	return &OpenaiClient{client: openai.NewClient(apiList[rand.Int()%len(apiList)])}
+	return &OpenaiClient{client: openai.NewClient(apikeyList[rand.Int()%len(apikeyList)])}
 }
 
 func (c *OpenaiClient) Embedding(blocks []string) (error, []openai.Embedding) {
